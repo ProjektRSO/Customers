@@ -28,12 +28,12 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v1 
       with:
-       username: kolan51
-       password: b23e8588-22c4-417d-91a6-a7782048096e
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push
       id: docker_build
       uses: docker/build-push-action@v2
       with:
         file: ./Dockerfile_with_maven_build
         push: true
-        tags: rso/customers-main:${{ steps.time.outputs.time }}
+        tags: kolan51/rso2021-customers::${{ steps.time.outputs.time }}
