@@ -36,4 +36,4 @@ jobs:
       with:
         file: ./Dockerfile_with_maven_build
         push: true
-        tags: kolan51/rso2021-customers::${{ steps.time.outputs.time }}
+        tags: kolan51/rso2021-customers:${{ steps.time.outputs.time }}
