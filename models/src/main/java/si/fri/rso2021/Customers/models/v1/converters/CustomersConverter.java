@@ -8,10 +8,11 @@ public class CustomersConverter {
     public static Customers toDto(CustomersEntitiy entity) {
 
         Customers dto = new Customers();
-        dto.setId(entity.getId());
+        dto.setCustomerId(entity.getCustomerId());
         dto.setFirstName(entity.getFirstName());
         dto.setLastName(entity.getLastName());
-        dto.setAddress(entity.getAddress());
+        dto.setStreetAddress(entity.getStreetAddress());
+        dto.setPostcode(entity.getPostcode());
         dto.setBirthDate(entity.getBirthDate());
 
         return dto;
@@ -21,10 +22,11 @@ public class CustomersConverter {
     public static CustomersEntitiy toEntity(Customers dto) {
 
         CustomersEntitiy entity = new CustomersEntitiy();
-        entity.setId(dto.getId());
+        entity.setCustomerId(dto.getCustomerId());
         entity.setFirstName(dto.getFirstName());
         entity.setLastName(dto.getLastName());
-        entity.setAddress(dto.getAddress());
+        entity.setStreetAddress(dto.getStreetAddress());
+        entity.setPostcode(dto.getPostcode());
         entity.setBirthDate(dto.getBirthDate());
 
         return entity;

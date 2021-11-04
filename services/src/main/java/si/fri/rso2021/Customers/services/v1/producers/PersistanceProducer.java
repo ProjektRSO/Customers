@@ -9,7 +9,7 @@ import javax.persistence.PersistenceUnit;
 
 public class PersistanceProducer {
 
-    @PersistenceUnit(unitName = "image-catalog-jpa")
+    @PersistenceUnit(unitName = "customers-jpa")
     private EntityManagerFactory emf;
 
     @Produces

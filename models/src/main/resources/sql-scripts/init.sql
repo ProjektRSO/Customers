@@ -1,1 +1,1 @@
-INSERT INTO customers (title, description, width, height, created, uri) VALUES ('Our fist image', 'This is the first image that we created for the RSO course.', 1280, 1325, TIMESTAMP '2006-01-01 15:36:38', 'https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/tess_first_light-tb.jpg');
+INSERT INTO customers (firstName, lastName, streetAddress, postcode, birthdate) VALUES ('Janko', 'Stanko', 'Vinkota Vodopivca 1', 5267, 1970-01-18);

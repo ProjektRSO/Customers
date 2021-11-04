@@ -70,7 +70,7 @@ public class CustomersBean{
             rollbackTx();
         }
 
-        if (CustomersEntitiy.getId() == null) {
+        if (CustomersEntitiy.getCustomerId() == null) {
             throw new RuntimeException("Entity was not persisted");
         }
 
@@ -89,7 +89,7 @@ public class CustomersBean{
 
         try {
             beginTx();
-            updatedCustomersEntity.setId(c.getId());
+            updatedCustomersEntity.setCustomerId(c.getCustomerId());
             updatedCustomersEntity = em.merge(updatedCustomersEntity);
             commitTx();
         }

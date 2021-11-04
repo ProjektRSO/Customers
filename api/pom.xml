@@ -31,6 +31,30 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>si.fri.rso2021.customers</groupId>
+            <artifactId>customers-lib</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
+    <!--
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>com.kumuluz.ee</groupId>
+              <artifactId>kumuluzee-maven-plugin</artifactId>
+              <version>${kumuluzee.version}</version>
+              <executions>
+                  <execution>
+                      <id>package</id>
+                      <goals>
+                          <goal>repackage</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
+      </plugins>
+  </build>
+ -->
 </project>

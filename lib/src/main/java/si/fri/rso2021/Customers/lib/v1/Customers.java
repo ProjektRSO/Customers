@@ -4,19 +4,20 @@ import java.util.Date;
 
 public class Customers {
 
-    private Integer CustomerId;
+    private Integer customerId;
     private String firstName;
     private String lastName;
-    private String address;
+    private String streetAddress;
+    private Integer postcode;
     private Date birthDate;
 
 
-    public Integer getId() {
-        return CustomerId;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setId(Integer id) {
-        this.CustomerId = CustomerId;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getFirstName() {
@@ -35,12 +36,18 @@ public class Customers {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStreetAddress() {
+        return streetAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
+    public Integer getPostcode() { return postcode; }
+
+    public void setPostcode(Integer postcode) {
+        this.postcode = postcode;
     }
 
     public Date getBirthDate() {

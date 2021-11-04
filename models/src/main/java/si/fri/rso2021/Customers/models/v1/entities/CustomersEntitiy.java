@@ -1,21 +1,22 @@
 package si.fri.rso2021.Customers.models.v1.entities;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.time.Instant;
 import java.util.Date;
 
 @Entity
-@Table(name = "Customer")
+@Table(name = "customers")
 @NamedQueries(value =
         {
-                @NamedQuery(name = "CuostmersEntity.getAll",
-                        query = "SELECT im FROM CuostmersEntity im")
+                @NamedQuery(name = "CustomersEntity.getAll",
+                        query = "SELECT im FROM CustomersEntity im")
         })
 public class CustomersEntitiy {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private static Integer id;
+        private static Integer customerId;
 
         @Column(name = "firstName")
         private String firstName;
@@ -23,17 +24,18 @@ public class CustomersEntitiy {
         @Column(name = "lastName")
         private String lastName;
 
-        @Column(name = "address")
-        private String address;
+        @Column(name = "streetAddress")
+        private String streetAddress;
+
+        @Column(name = "postcode")
+        private Integer postcode;
 
         @Column(name = "birthDate")
         private Date birthDate;
 
-        public static Integer getId() { return id; }
+        public static Integer getCustomerId() { return customerId; }
 
-        public void setId(Integer id) {
-                this.id = id;
-        }
+        public void setCustomerId(Integer customerId){ this.customerId = customerId;}
 
         public String getFirstName() {
                 return firstName;
@@ -51,12 +53,20 @@ public class CustomersEntitiy {
                 this.lastName = lastName;
         }
 
-        public String getAddress() {
-                return address;
+        public String getStreetAddress() {
+                return streetAddress;
         }
 
-        public void setAddress(String address) {
-                this.address = address;
+        public void setStreetAddress(String streetAddress) {
+                this.streetAddress = streetAddress;
+        }
+
+        public Integer getPostcode() {
+                return postcode;
+        }
+
+        public void setPostcode(Integer postcode) {
+                this.postcode = postcode;
         }
 
         public Date getBirthDate() {

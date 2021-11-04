@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @ApplicationScoped
-@Path("/images")
+@Path("/customers")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class CustomersResources {
@@ -35,7 +35,7 @@ public class CustomersResources {
     protected UriInfo uriInfo;
 
     @GET
-    public Response getImageMetadata() {
+    public Response getCustomer() {
 
         List<Customers> customers = customersBean.getCustomersFilter(uriInfo);
 
@@ -44,7 +44,7 @@ public class CustomersResources {
 
     @GET
     @Path("/{customerId}")
-    public Response getImageMetadata(@PathParam("customerId") Integer customerId) {
+    public Response getCustomerId(@PathParam("customerId") Integer customerId) {
 
         Customers customers = customersBean.getCustomerId(customerId);
 
@@ -56,9 +56,10 @@ public class CustomersResources {
     }
 
     @POST
+    @Path("/{customerId}/customer")
     public Response createCustomer(Customers customers) {
 
-        if ((customers.getId() == null || customers.getFirstName() == null || customers.getLastName() == null)) {
+        if ((customers.getCustomerId() == null || customers.getFirstName() == null || customers.getLastName() == null)) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
         else {
@@ -70,7 +71,7 @@ public class CustomersResources {
     }
 
     @PUT
-    @Path("{cusomerId}")
+    @Path("{customerId}")
     public Response putCustomers(@PathParam("customerId") Integer customerId, Customers customers) {
 
         customers = customersBean.putCustomers(customerId, customers);
