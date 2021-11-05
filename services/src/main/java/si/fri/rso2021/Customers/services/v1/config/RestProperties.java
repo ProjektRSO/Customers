@@ -5,9 +5,8 @@ import com.kumuluz.ee.configuration.cdi.ConfigValue;
 
 import javax.enterprise.context.ApplicationScoped;
 
-
+@ConfigBundle("rest-properties")
 @ApplicationScoped
-@ConfigBundle("rest-config")
 public class RestProperties {
 
     @ConfigValue(watch = true)
