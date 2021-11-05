@@ -12,7 +12,7 @@ import java.util.Date;
                 @NamedQuery(name = "CustomersEntity.getAll",
                         query = "SELECT im FROM CustomersEntity im")
         })
-public class CustomersEntitiy {
+public class CustomersEntity {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)

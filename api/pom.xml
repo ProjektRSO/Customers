@@ -38,8 +38,7 @@
         </dependency>
     </dependencies>
 
-    <!--
-  <build>
+    <build>
       <plugins>
           <plugin>
               <groupId>com.kumuluz.ee</groupId>
@@ -55,6 +54,6 @@
               </executions>
           </plugin>
       </plugins>
-  </build>
- -->
+    </build>
+
 </project>

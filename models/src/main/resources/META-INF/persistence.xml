@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="customers-jpa" transaction-type="RESOURCE_LOCAL">
-        <non-jta-data-source>jdbc/Customers</non-jta-data-source>
+        <non-jta-data-source>jdbc/customers</non-jta-data-source>
 
         <class>si.fri.rso2021.Customers.models.v1.entities.CustomersEntitiy</class>
         <class>si.fri.rso2021.Customers.models.v1.converters.CustomersConverter</class>
