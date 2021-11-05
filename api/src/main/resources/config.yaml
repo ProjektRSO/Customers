@@ -29,7 +29,7 @@ kumuluzee:
   metrics:
     web-instrumentation:
       - name: customers-endpoint
-        url-pattern: /v1/images/*
+        url-pattern: /v1/customers/*
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                         <Configuration name="comments">
