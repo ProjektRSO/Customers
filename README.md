@@ -3,5 +3,5 @@
 ## Prerequisites
 
 ```bash
-docker run -d --name pg-customers -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=customers -p 5432:5432 postgres:13
+docker run -d --name pg-customers -e POSTGRES_USER=kolan51 -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=customers -p 5432:5432 postgres:13
 ```

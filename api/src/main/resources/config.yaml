@@ -10,7 +10,7 @@ kumuluzee:
   datasources:
     - jndi-name: jdbc/customers-jpa
       connection-url: jdbc:postgresql://localhost:5432/customers
-      username: dbuser
+      username: kolan51
       password: postgres
   config:
     start-retry-delay-ms: 500
