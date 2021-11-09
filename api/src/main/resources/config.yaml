@@ -8,7 +8,7 @@ kumuluzee:
     http:
       port: 8080
   datasources:
-    - jndi-name: jdbc/customers
+    - jndi-name: jdbc/customers-jpa
       connection-url: jdbc:postgresql://localhost:5432/customers
       username: dbuser
       password: postgres
@@ -17,13 +17,15 @@ kumuluzee:
     max-retry-delay-ms: 900000
     etcd:
       hosts: http://192.168.99.100:2379
+    consul:
+      agent: http://localhost:8500
   rest-properties:
     maintenance-mode: false
   health:
     checks:
       data-source-health-check:
         type: liveness
-        jndi-name: jdbc/customers
+        jndi-name: jdbc/customers-jpa
   metrics:
     web-instrumentation:
       - name: customers-endpoint
@@ -72,9 +74,6 @@ kumuluzee:
         auto-offset-reset: earliest
         session-timeout-ms: 30000
         sasl-jaas-config:
-rest-properties:
-  maintenance-mode: false
-  broken: false
 app-properties:
   amazon-rekognition:
     access-key:
@@ -89,3 +88,17 @@ app-properties:
 # KUMULUZEE_NAME
 # KUMULUZEE_ENV_NAME
 # KUMULUZEE_DATASOURCES0_CONNECTIONURL
+
+# docker run -d --name rso-workerdb -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 postgres:13
+# kumuluzee.env.name če bi bilo znotraj
+# če datoteka: velike črke in podčrtaj namesto pik KUMULUZEE_ENV_NAME
+
+# docker network create rso2021
+# docker run -d --name rso-workerdb -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=workers -p 5432:5432 --network rso2021 postgres:13
+
+# okoljske spremenljivke: v run ukazu z -e IME=vrednost
+# jdbc:postgresql://worker-database:5432/workers
+# KUMULUZEE_DATASOURCES0_CONNECTIONURL -> sestavljeno iz nivojev te yaml datoteke, 0 tam kjer lahko več
+# docker run -d --name workers-MS -p 8080:8080 -e KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://rso-workerdb:5432/workers --network rso2021 rso2021.v1
+
+# consul agent -dev, na 8500 portu
