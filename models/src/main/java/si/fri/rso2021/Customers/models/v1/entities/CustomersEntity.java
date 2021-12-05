@@ -1,8 +1,6 @@
 package si.fri.rso2021.Customers.models.v1.entities;
 
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
-import java.time.Instant;
 import java.util.Date;
 
 @Entity
