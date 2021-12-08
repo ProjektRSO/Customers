@@ -8,10 +8,10 @@ kumuluzee:
     http:
       port: 8080
   datasources:
-    - jndi-name: jdbc/customers
-      connection-url: jdbc:postgresql://localhost:5432/customers
-      username: kolan51
-      password: postgres
+    - jndi-name: jdbc/customers-jpa
+      connection-url: jdbc:postgresql://hansken.db.elephantsql.com/tgqwnsud
+      username: tgqwnsud
+      password: XoguIq_gIoHdjDMbKZEnuVj4QWJ7bwLg
   config:
     start-retry-delay-ms: 500
     max-retry-delay-ms: 900000
@@ -25,7 +25,7 @@ kumuluzee:
     checks:
       data-source-health-check:
         type: liveness
-        jndi-name: jdbc/customers
+        jndi-name: jdbc/customers-jpa
   metrics:
     web-instrumentation:
       - name: customers-endpoint
