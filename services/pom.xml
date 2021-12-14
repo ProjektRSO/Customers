@@ -39,6 +39,7 @@
         <dependency>
             <groupId>si.fri.rso2021.customers</groupId>
             <artifactId>customers-models</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
@@ -49,12 +50,6 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>si.fri.rso2021.customers</groupId>
-            <artifactId>customers-models</artifactId>
-            <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
