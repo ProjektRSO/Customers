@@ -8,7 +8,7 @@ import java.util.Date;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "CustomersEntity.getAll",
-                        query = "SELECT c FROM CustomersEntity im")
+                        query = "SELECT c FROM CustomersEntity c")
         })
 public class CustomersEntity implements java.io.Serializable{
 
