@@ -1,4 +1,4 @@
-FROM adoptopenjdk:8-jre-hotspot
+FROM adoptopenjdk:15-jre-hotspot
 
 RUN mkdir /app
 
