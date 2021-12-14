@@ -8,13 +8,13 @@ import java.util.Date;
 @NamedQueries(value =
         {
                 @NamedQuery(name = "CustomersEntity.getAll",
-                        query = "SELECT im FROM CustomersEntity im")
+                        query = "SELECT c FROM CustomersEntity im")
         })
-public class CustomersEntity {
+public class CustomersEntity implements java.io.Serializable{
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private static Integer customerId;
+        private Integer id;
 
         @Column(name = "firstName")
         private String firstName;
@@ -31,9 +31,9 @@ public class CustomersEntity {
         @Column(name = "birthDate")
         private Date birthDate;
 
-        public static Integer getCustomerId() { return customerId; }
+        public Integer getId() { return id; }
 
-        public void setCustomerId(Integer customerId){ this.customerId = customerId;}
+        public void setId(Integer id){ this.id = id;}
 
         public String getFirstName() {
                 return firstName;

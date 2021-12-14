@@ -1,6 +1,6 @@
 package si.fri.rso2021.Customers.api.v1.resources;
 
-import si.fri.rso2021.Customers.lib.v1.Customers;
+import si.fri.rso2021.Customers.models.v1.objects.Customers;
 import si.fri.rso2021.Customers.services.v1.beans.CustomersBean;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -36,60 +36,46 @@ public class CustomersResources {
 
     @GET
     public Response getCustomer() {
-
         List<Customers> customers = customersBean.getCustomersFilter(uriInfo);
-
         return Response.status(Response.Status.OK).entity(customers).build();
     }
 
     @GET
-    @Path("/{customerId}")
-    public Response getCustomerId(@PathParam("customerId") Integer customerId) {
-
-        Customers customers = customersBean.getCustomerId(customerId);
-
-        if (customers == null) {
+    @Path("/{id}")
+    public Response getCustomerId(@PathParam("id") Integer id) {
+        Customers c = customersBean.getCustomer_byId(id);
+        if (c == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-
-        return Response.status(Response.Status.OK).entity(customers).build();
+        return Response.status(Response.Status.OK).entity(c).build();
     }
 
     @POST
-    @Path("/{customerId}/customer")
-    public Response createCustomer(Customers customers) {
-
-        if ((customers.getCustomerId() == null || customers.getFirstName() == null || customers.getLastName() == null)) {
+    public Response createCustomer(Customers c) {
+        if ((c.getId() == null || c.getFirstName() == null || c.getLastName() == null)) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
         else {
-            customers = customersBean.createCustomer(customers);
+            c = customersBean.createCustomer(c);
         }
-
-        return Response.status(Response.Status.CONFLICT).entity(customers).build();
-
+        return Response.status(Response.Status.CONFLICT).entity(c).build();
     }
 
     @PUT
-    @Path("{customerId}")
-    public Response putCustomers(@PathParam("customerId") Integer customerId, Customers customers) {
-
-        customers = customersBean.putCustomers(customerId, customers);
-
-        if (customers == null) {
+    @Path("{id}")
+    public Response putCustomers(@PathParam("customerId") Integer id, Customers c) {
+        c = customersBean.putCustomers(id, c);
+        if (c == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-
         return Response.status(Response.Status.NOT_MODIFIED).build();
-
     }
 
     @DELETE
-    @Path("{customerId}")
-    public Response deleteCustomers(@PathParam("customerId") Integer customerId) {
+    @Path("{id}")
+    public Response deleteCustomers(@PathParam("id") Integer id) {
 
-        boolean deleted = customersBean.deleteCustomers(customerId);
-
+        boolean deleted = customersBean.deleteCustomers(id);
         if (deleted) {
             return Response.status(Response.Status.NO_CONTENT).build();
         }
@@ -97,5 +83,4 @@ public class CustomersResources {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
-
 }

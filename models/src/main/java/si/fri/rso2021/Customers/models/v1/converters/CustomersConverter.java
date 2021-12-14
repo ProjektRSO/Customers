@@ -1,6 +1,6 @@
 package si.fri.rso2021.Customers.models.v1.converters;
 
-import si.fri.rso2021.Customers.lib.v1.Customers;
+import si.fri.rso2021.Customers.models.v1.objects.Customers;
 import si.fri.rso2021.Customers.models.v1.entities.CustomersEntity;
 
 public class CustomersConverter {
@@ -8,7 +8,7 @@ public class CustomersConverter {
     public static Customers toDto(CustomersEntity entity) {
 
         Customers dto = new Customers();
-        dto.setCustomerId(entity.getCustomerId());
+        dto.setId(entity.getId());
         dto.setFirstName(entity.getFirstName());
         dto.setLastName(entity.getLastName());
         dto.setStreetAddress(entity.getStreetAddress());
@@ -22,7 +22,7 @@ public class CustomersConverter {
     public static CustomersEntity toEntity(Customers dto) {
 
         CustomersEntity entity = new CustomersEntity();
-        entity.setCustomerId(dto.getCustomerId());
+        entity.setId(dto.getId());
         entity.setFirstName(dto.getFirstName());
         entity.setLastName(dto.getLastName());
         entity.setStreetAddress(dto.getStreetAddress());

@@ -1,10 +1,10 @@
-package si.fri.rso2021.Customers.lib.v1;
+package si.fri.rso2021.Customers.models.v1.objects;
 
 import java.util.Date;
 
 public class Customers {
 
-    private Integer customerId;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String streetAddress;
@@ -12,12 +12,12 @@ public class Customers {
     private Date birthDate;
 
 
-    public Integer getCustomerId() {
-        return customerId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFirstName() {
