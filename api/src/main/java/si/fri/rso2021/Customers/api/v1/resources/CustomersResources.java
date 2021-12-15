@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 @Consumes(MediaType.APPLICATION_JSON)
 public class CustomersResources {
 
-    private Logger log = Logger.getLogger(CustomersResources.class.getName());
+    private final Logger log = Logger.getLogger(CustomersResources.class.getName());
 
     @Inject
     private CustomersBean customersBean;
@@ -63,7 +63,7 @@ public class CustomersResources {
 
     @PUT
     @Path("{id}")
-    public Response putCustomers(@PathParam("customerId") Integer id, Customers c) {
+    public Response putCustomers(@PathParam("id") Integer id, Customers c) {
         c = customersBean.putCustomers(id, c);
         if (c == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
