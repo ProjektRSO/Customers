@@ -14,9 +14,9 @@ CREATE TABLE customers ( id serial PRIMARY KEY, firstName VARCHAR ( 50 ) NOT NUL
 ```bash
 mvn clean package
 cd api/target
-java -jar image-catalog-api-1.0.0-SNAPSHOT.jar
+java -jar customers-api-1.0.0-SNAPSHOT.jar
 ```
-Available at: localhost:8080/v1/images
+Available at: localhost:8080/v1/customers
 
 ## Docker commands
 ```bash
