@@ -28,8 +28,11 @@ public class CustomersEntity implements java.io.Serializable{
         @Column(name = "postcode")
         private Integer postcode;
 
+        @Column(name = "town")
+        private String town;
+
         @Column(name = "birthDate")
-        private Date birthDate;
+        private String birthDate;
 
         public Integer getId() { return id; }
 
@@ -67,10 +70,18 @@ public class CustomersEntity implements java.io.Serializable{
                 this.postcode = postcode;
         }
 
-        public Date getBirthDate() {
+        public String getTown() {
+                return town;
+        }
+
+        public void setTown(String town) {
+                this.town = town;
+        }
+
+        public String getBirthDate() {
                 return birthDate;
         }
 
-        public void setBirthDate(Date birthDate) { this.birthDate = birthDate;}
+        public void setBirthDate(String birthDate) { this.birthDate = birthDate;}
 
 }

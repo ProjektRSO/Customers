@@ -9,7 +9,8 @@ public class Customers {
     private String lastName;
     private String streetAddress;
     private Integer postcode;
-    private Date birthDate;
+    private String town;
+    private String birthDate;
 
 
     public Integer getId() {
@@ -46,15 +47,21 @@ public class Customers {
 
     public Integer getPostcode() { return postcode; }
 
-    public void setPostcode(Integer postcode) {
-        this.postcode = postcode;
+    public void setPostcode(Integer postcode) { this.postcode = postcode;}
+
+    public String getTown() {
+        return town;
     }
 
-    public Date getBirthDate() {
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) { this.birthDate = birthDate;}
+    public void setBirthDate(String birthDate) { this.birthDate = birthDate;}
 
 
 }
