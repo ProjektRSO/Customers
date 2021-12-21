@@ -23,8 +23,8 @@ Available at: localhost:8080/v1/customers
 docker build -t novaslika .   
 docker images
 docker run novaslika    
-docker tag novaslika prporso/novaslika   
-docker push prporso/novaslika  
+docker tag novaslika rso2021/novaslika   
+docker push rso2021/novaslika  
 ```
 
 ## Docker and environmental variables
@@ -37,9 +37,9 @@ docker network ls
 docker network create rso
 docker network rm rso
 docker rm -f pg-image-metadata
-docker run -d --name pg-image-metadata -e POSTGRES_USER=dbuser -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image-metadata -p 5432:5432 --network rso postgres:13
-docker inspect pg-image-metadata
-docker run -p 8080:8080 --network rso -e KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-image-metadata:5432/image-metadata rso-dn
+docker run -d --name pg-customers -e POSTGRES_USER=kolan51 -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=image-metadata -p 5432:5432 --network rso postgres:13
+docker inspect pg-customers
+docker run -p 8080:8080 --network rso -e KUMULUZEE_DATASOURCES0_CONNECTIONURL=jdbc:postgresql://pg-customers:5432/customers rso-dn
 ```
 
 ## Consul
@@ -54,12 +54,12 @@ Available at: localhost:8500
 kubectl version
 kubectl --help
 kubectl get nodes
-kubectl create -f image-catalog-deployment.yaml 
-kubectl apply -f image-catalog-deployment.yaml 
+kubectl create -f customers-deployment.yaml 
+kubectl apply -f customers-deployment.yaml 
 kubectl get services 
 kubectl get deployments
 kubectl get pods
-kubectl logs image-catalog-deployment-6f59c5d96c-rjz46
-kubectl delete pod image-catalog-deployment-6f59c5d96c-rjz46
+kubectl logs customers-deployment-6f59c5d96c-rjz46
+kubectl delete pod customers-deployment-6f59c5d96c-rjz46
 ```
 Secrets: https://kubernetes.io/docs/concepts/configuration/secret/

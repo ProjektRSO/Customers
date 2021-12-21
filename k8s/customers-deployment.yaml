@@ -13,7 +13,7 @@ spec:
         app: customers
     spec:
       containers:
-        - image: kolan51/rso2021-customers:2021-11-05-20-33-09
+        - image: kolan51/rso2021-customers:1.0.0-SNAPSHOT
           name: customers
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
