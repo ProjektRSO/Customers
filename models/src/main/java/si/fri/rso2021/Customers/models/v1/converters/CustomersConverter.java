@@ -13,7 +13,9 @@ public class CustomersConverter {
         dto.setLastName(entity.getLastName());
         dto.setStreetAddress(entity.getStreetAddress());
         dto.setPostcode(entity.getPostcode());
+        dto.setTown(entity.getTown());
         dto.setBirthDate(entity.getBirthDate());
+
 
         return dto;
 
@@ -27,6 +29,7 @@ public class CustomersConverter {
         entity.setLastName(dto.getLastName());
         entity.setStreetAddress(dto.getStreetAddress());
         entity.setPostcode(dto.getPostcode());
+        entity.setTown(dto.getTown());
         entity.setBirthDate(dto.getBirthDate());
 
         return entity;
