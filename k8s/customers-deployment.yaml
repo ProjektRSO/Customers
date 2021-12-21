@@ -13,7 +13,7 @@ spec:
         app: customers
     spec:
       containers:
-        - image: kolan51/rso2021-customers:1.0.0-SNAPSHOT
+        - image: kolan51/rso2021-customers:2021-12-21-20-56-12
           name: customers
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
@@ -21,10 +21,7 @@ spec:
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: tgqwnsud
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: pg-pass
-                  key: KUMULUZEE_DATASOURCES0_PASSWORD
+              value: XoguIq_gIoHdjDMbKZEnuVj4QWJ7bwLg
           ports:
             - containerPort: 8080
               name: server
