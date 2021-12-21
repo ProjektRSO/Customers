@@ -12,9 +12,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.UriInfo;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import org.eclipse.microprofile.metrics.annotation.Timed;
+import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
+import org.eclipse.microprofile.faulttolerance.Fallback;
+import org.eclipse.microprofile.faulttolerance.Timeout;
 
 @RequestScoped
 public class CustomersBean{
@@ -24,6 +29,7 @@ public class CustomersBean{
     @Inject
     private EntityManager em;
 
+    @Timed(name="get all customers")
     public List<Customers> getCustomers() {
 
         TypedQuery<CustomersEntity> query = em.createNamedQuery(
@@ -35,6 +41,7 @@ public class CustomersBean{
 
     }
 
+    @Timeout(value = 2, unit = ChronoUnit.SECONDS)
     public List<Customers> getCustomersFilter(UriInfo uriInfo) {
 
         QueryParameters queryParameters = QueryParameters.query(uriInfo.getRequestUri().getQuery()).defaultOffset(0)
