@@ -11,6 +11,7 @@ public class Customers {
     private Integer postcode;
     private String town;
     private String birthDate;
+    private String IBAN;
 
 
     public Integer getId() {
@@ -21,9 +22,7 @@ public class Customers {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    public String getFirstName() {return firstName;}
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -62,6 +61,12 @@ public class Customers {
     }
 
     public void setBirthDate(String birthDate) { this.birthDate = birthDate;}
+
+    public String getIBAN() {
+        return IBAN;
+    }
+
+    public void setIBAN(String IBAN) { this.IBAN = IBAN;}
 
 
 }

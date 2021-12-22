@@ -15,7 +15,7 @@ public class CustomersConverter {
         dto.setPostcode(entity.getPostcode());
         dto.setTown(entity.getTown());
         dto.setBirthDate(entity.getBirthDate());
-
+        dto.setIBAN(entity.getIBAN());
 
         return dto;
 
@@ -31,6 +31,7 @@ public class CustomersConverter {
         entity.setPostcode(dto.getPostcode());
         entity.setTown(dto.getTown());
         entity.setBirthDate(dto.getBirthDate());
+        entity.setIBAN(dto.getIBAN());
 
         return entity;
 

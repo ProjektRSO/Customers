@@ -1,1 +1,1 @@
-INSERT INTO customers (id, firstName, lastName, streetAddress, postcode, town, birthDate) VALUES (1, 'Janko', 'Stanko', 'Vinkota Vodopivca 1', 1000, 'Ljubljana', 1970-01-18);
+INSERT INTO customers (id, firstName, lastName, streetAddress, postcode, town, birthDate, IBAN) VALUES (1, 'Janko', 'Stanko', 'Vinkota Vodopivca 1', 1000, 'Ljubljana', 1970-01-18,'AD1400080001001234567890');

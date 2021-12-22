@@ -5,12 +5,14 @@ import java.util.Date;
 
 @RequestScoped
 public class CustomersDTO implements java.io.Serializable {
+
     private String id;
     private String firstName;
     private String lastName;
     private String streetAddress;
     private Integer postcode;
     private Date birthDate;
+    private String IBAN;
 
     public void setId(String id) {
         this.id = id;
@@ -54,5 +56,13 @@ public class CustomersDTO implements java.io.Serializable {
 
     public Date getBirthDate() {
         return birthDate;
+    }
+
+    public void setIBAN(String IBAN) {
+        this.IBAN = IBAN;
+    }
+
+    public String getIBAN() {
+        return IBAN;
     }
 }

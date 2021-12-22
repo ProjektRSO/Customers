@@ -7,8 +7,7 @@ docker run -d --name pg-customers -e POSTGRES_USER=kolan51 -e POSTGRES_PASSWORD=
 ```
 
 ```
-CREATE TABLE customers ( id serial PRIMARY KEY, firstName VARCHAR ( 50 ) NOT NULL, lastName VARCHAR ( 50 ) NOT NULL, streetAddress VARCHAR ( 50 ) NOT NULL, postcode real NOT NULL, birthDate VARCHAR (11) NOT NULL );
-```
+CREATE TABLE customers ( id serial PRIMARY KEY, firstName VARCHAR ( 50 ) NOT NULL, lastName VARCHAR ( 50 ) NOT NULL, streetAddress VARCHAR ( 50 ) NOT NULL, postcode real NOT NULL, town VARCHAR ( 50 ) NOT NULL, birthDate VARCHAR (11) NOT NULL, IBAN varchar ( 34 ) NOT NULL );```
 
 ## Build and run commands
 ```bash

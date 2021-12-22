@@ -34,6 +34,9 @@ public class CustomersEntity implements java.io.Serializable{
         @Column(name = "birthDate")
         private String birthDate;
 
+        @Column(name = "IBAN")
+        private String IBAN;
+
         public Integer getId() { return id; }
 
         public void setId(Integer id){ this.id = id;}
@@ -83,5 +86,11 @@ public class CustomersEntity implements java.io.Serializable{
         }
 
         public void setBirthDate(String birthDate) { this.birthDate = birthDate;}
+
+        public String getIBAN() {
+                return IBAN;
+        }
+
+        public void setIBAN(String IBAN) { this.IBAN = IBAN;}
 
 }
