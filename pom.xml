@@ -28,6 +28,8 @@
         <kumuluzee-metrics.version>2.3.0</kumuluzee-metrics.version>
         <kumuluzee-config-mp.version>1.4.1</kumuluzee-config-mp.version>
         <kumuluzee-logs.version>1.4.2</kumuluzee-logs.version>
+        <kumuluzee-grpc.version>1.1.0</kumuluzee-grpc.version>
+        <kumuluzee-graphql.version>1.1.0</kumuluzee-graphql.version>
         <kumuluzee-fault-tolerance.version>2.1.1</kumuluzee-fault-tolerance.version>
     </properties>
 
@@ -37,6 +39,16 @@
                 <groupId>com.kumuluz.ee.config</groupId>
                 <artifactId>kumuluzee-config-consul</artifactId>
                 <version>${kumuluzee-config.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kumuluz.ee.graphql</groupId>
+                <artifactId>kumuluzee-graphql</artifactId>
+                <version>${kumuluzee-graphql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kumuluz.ee.graphql</groupId>
+                <artifactId>kumuluzee-graphql-ui</artifactId>
+                <version>${kumuluzee-graphql.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.kumuluz.ee</groupId>
@@ -116,6 +128,11 @@
                 <groupId>com.kumuluz.ee.metrics</groupId>
                 <artifactId>kumuluzee-metrics-core</artifactId>
                 <version>${kumuluzee-metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kumuluz.ee.grpc</groupId>
+                <artifactId>kumuluzee-grpc</artifactId>
+                <version>${kumuluz-grpc.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
