@@ -27,6 +27,9 @@ public class CustomersBean{
     private Logger log = Logger.getLogger(CustomersBean.class.getName());
 
     @Inject
+    private CustomersBean cusutomersBeanProxy;
+
+    @Inject
     private EntityManager em;
 
     @Timed(name="get all customers")
@@ -51,12 +54,23 @@ public class CustomersBean{
                 .map(CustomersConverter::toDto).collect(Collectors.toList());
     }
 
+    @Timeout(value = 2, unit = ChronoUnit.SECONDS)
+    @CircuitBreaker(requestVolumeThreshold = 3)
+    @Fallback(fallbackMethod = "getCustomerIdFallback")
     public Customers getCustomer_byId(Integer id) {
+
+        log.info("Getting customers by id.");
+
+
         CustomersEntity customersEntity = em.find(CustomersEntity.class, id);
         if (customersEntity == null) {
             throw new NotFoundException();
         }
         return CustomersConverter.toDto(customersEntity);
+    }
+
+    public Integer getCustomerIdFallback(Integer id) {
+        return null;
     }
 
     public Customers createCustomer(Customers c) {

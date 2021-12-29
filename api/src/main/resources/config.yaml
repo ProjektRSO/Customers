@@ -12,9 +12,9 @@ kumuluzee:
     ping-interval: 15
   datasources:
     - jndi-name: jdbc/customers-jpa
-      connection-url: jdbc:postgresql://localhost:5432/customers
-      username: kolan51
-      password: postgres
+      connection-url: jdbc:postgresql://workersdb.postgres.database.azure.com:5432/postgres
+      username: prpo_user@workersdb
+      password: mBK7in5SGvGyZIZ_EmCrsY4uLXKTiraP
   config:
     start-retry-delay-ms: 500
     max-retry-delay-ms: 900000
@@ -35,12 +35,12 @@ kumuluzee:
         url-pattern: /v1/customers/*
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
-                        <Configuration name="comments">
+                        <Configuration name="customers">
                             <Appenders>
                                 <Console name="console" target="SYSTEM_OUT">
                                     <PatternLayout pattern="%d %p %marker %m %X %ex %n"/>
                                 </Console>
-                                <Socket name="logstash" host="7889bb41-f39e-47e8-ba99-7544d8dfb6a5-ls.logit.io"
+                                <Socket name="logstash" host="e1595967-41f2-4179-8d37-32064ea9bdfc-ls.logit.io"
                                 port="12345" protocol="udp">
                                     <JSONLayout complete="false" compact="true" eventEol="true" charset="UTF-8" properties="true"/>
                                 </Socket>

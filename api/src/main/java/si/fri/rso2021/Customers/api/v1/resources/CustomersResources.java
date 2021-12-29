@@ -1,5 +1,6 @@
 package si.fri.rso2021.Customers.api.v1.resources;
 
+import com.kumuluz.ee.logs.cdi.Log;
 import si.fri.rso2021.Customers.models.v1.objects.Customers;
 import si.fri.rso2021.Customers.services.v1.beans.CustomersBean;
 
@@ -23,6 +24,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.logging.Logger;
 
+@Log
 @ApplicationScoped
 @Path("/customers")
 @Produces(MediaType.APPLICATION_JSON)
