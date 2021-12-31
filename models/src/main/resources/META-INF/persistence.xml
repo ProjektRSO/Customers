@@ -9,9 +9,6 @@
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="none"/>
             <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
-            <!-- inicializacijska skripta -->
-            <property name="javax.persistence.sql-load-script-source" value="sql-scripts/init-db.sql"/>
-            <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
         </properties>
     </persistence-unit>
 </persistence>

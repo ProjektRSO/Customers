@@ -54,8 +54,6 @@ public class CustomersBean{
     }
 
     @Timeout(value = 2, unit = ChronoUnit.SECONDS)
-    @CircuitBreaker(requestVolumeThreshold = 3)
-    @Fallback(fallbackMethod = "getCustomerIdFallback")
     public Customers getCustomer_byId(Integer id) {
 
         log.info("Getting customers by id.");

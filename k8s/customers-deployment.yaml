@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: customers-deployment
+  name: customers
 spec:
   replicas: 1
   selector:
@@ -16,12 +16,10 @@ spec:
         - image: kolan51/rso2021-customers:2021-12-21-20-56-12
           name: customers
           env:
-            - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
-              value: jdbc:postgres://tgqwnsud:XoguIq_gIoHdjDMbKZEnuVj4QWJ7bwLg@hansken.db.elephantsql.com/tgqwnsud
-            - name: KUMULUZEE_DATASOURCES0_USERNAME
-              value: tgqwnsud
-            - name: KUMULUZEE_DATASOURCES0_PASSWORD
-              value: XoguIq_gIoHdjDMbKZEnuVj4QWJ7bwLg
+            - name: KUMULUZEE_CONFIG_CONSUL_AGENT
+              value: http://52.150.43.117:8500/
+            - name: KUMULUZEE_DISCOVERY_CONSUL_AGENT
+              value: http://52.150.43.117:8500/
           ports:
             - containerPort: 8080
               name: server

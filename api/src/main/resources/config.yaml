@@ -75,10 +75,6 @@ kumuluzee:
         auto-offset-reset: earliest
         session-timeout-ms: 30000
         sasl-jaas-config:
-  app-properties:
-    amazon-rekognition:
-      access-key:
-      secret-key:
   fault-tolerance:
     annotation-overrides:
       - class: si.fri.rso2021.Customers.services.v1.beans.CustomersBean
@@ -86,7 +82,9 @@ kumuluzee:
         annotation: retry
         parameters:
           max-retries: 15
-
+rest-properties:
+  maintenance-mode: false
+  broken: false
 # poimenovanje ter dostop do okoljskih spremenljivk
 
 # kumuluzee.name

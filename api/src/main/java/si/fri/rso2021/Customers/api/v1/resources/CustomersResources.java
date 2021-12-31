@@ -46,12 +46,6 @@ public class CustomersResources {
     @Context
     protected UriInfo uriInfo;
 
-    @Inject
-    @DiscoverService(value = "customers", environment = "test", version = "1.0.0")
-    private URL customerServiceUrl;
-
-    private String url = customerServiceUrl.toString();
-
 
     @Operation(description = "Get all customers data.", summary = "Get all data")
     @APIResponses({
