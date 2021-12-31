@@ -44,7 +44,6 @@ public class CustomersBean{
 
     }
 
-    @Timeout(value = 2, unit = ChronoUnit.SECONDS)
     public List<Customers> getCustomersFilter(UriInfo uriInfo) {
 
         QueryParameters queryParameters = QueryParameters.query(uriInfo.getRequestUri().getQuery()).defaultOffset(0)
