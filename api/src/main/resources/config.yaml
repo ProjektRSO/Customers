@@ -77,6 +77,8 @@ kumuluzee:
         auto-offset-reset: earliest
         session-timeout-ms: 30000
         sasl-jaas-config:
+          username: xb9xnuao
+          password: Xp09QfLtNN2nvExTgf1IxKKJoKJ5qiaE
   fault-tolerance:
     annotation-overrides:
       - class: si.fri.rso2021.Customers.services.v1.beans.CustomersBean
