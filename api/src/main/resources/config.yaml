@@ -61,7 +61,7 @@ kumuluzee:
   streaming:
     kafka:
       producer:
-        bootstrap-servers: ark-01.srvs.cloudkafka.com:9094
+        bootstrap-servers: glider-02.srvs.cloudkafka.com:9094
         acks: all
         retries: 0
         batch-size: 16384

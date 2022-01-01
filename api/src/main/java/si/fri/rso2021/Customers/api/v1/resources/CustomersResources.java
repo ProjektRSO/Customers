@@ -14,10 +14,10 @@ import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
-
 import org.eclipse.microprofile.metrics.annotation.Metered;
 import com.kumuluz.ee.discovery.annotations.DiscoverService;
 import si.fri.rso2021.Customers.services.v1.dtos.CustomersDTO;
+import si.fri.rso2021.Customers.services.v1.streaming.EventProducerImplementation;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -46,6 +46,8 @@ public class CustomersResources {
     @Context
     protected UriInfo uriInfo;
 
+    @Inject
+    private EventProducerImplementation eventProducer;
 
     @Operation(description = "Get all customers data.", summary = "Get all data")
     @APIResponses({
@@ -78,6 +80,9 @@ public class CustomersResources {
         if (c == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
+
+        eventProducer.produceMessage(String.valueOf(id), c.getFirstName());
+
         return Response.status(Response.Status.OK).entity(c).build();
     }
 
