@@ -29,6 +29,11 @@ kumuluzee:
         jndi-name: jdbc/customers-jpa
       disk-space-health-check:
         threshold: 100000000
+    logs:
+      enabled: true
+      type: readiness
+      level: FINE
+      period-s: 60
   metrics:
     web-instrumentation:
       - name: customers-endpoint
