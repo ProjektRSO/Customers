@@ -1,6 +1,11 @@
 package si.fri.rso2021.Customers.api.v1.resources;
 
 import com.kumuluz.ee.logs.cdi.Log;
+import java.util.logging.Logger;
+import org.eclipse.microprofile.openapi.annotations.info.Contact;
+import org.eclipse.microprofile.openapi.annotations.info.Info;
+import org.eclipse.microprofile.openapi.annotations.info.License;
+import org.eclipse.microprofile.openapi.annotations.servers.Server;
 import si.fri.rso2021.Customers.models.v1.objects.Customers;
 import si.fri.rso2021.Customers.services.v1.beans.CustomersBean;
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
@@ -18,7 +23,6 @@ import org.eclipse.microprofile.metrics.annotation.Metered;
 import com.kumuluz.ee.discovery.annotations.DiscoverService;
 import si.fri.rso2021.Customers.services.v1.dtos.CustomersDTO;
 import si.fri.rso2021.Customers.services.v1.streaming.EventProducerImplementation;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -26,9 +30,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
-import java.net.URL;
+import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import java.util.List;
-import java.util.logging.Logger;
+
 
 @Log
 @ApplicationScoped
@@ -48,6 +52,7 @@ public class CustomersResources {
 
     @Inject
     private EventProducerImplementation eventProducer;
+
 
     @Operation(description = "Get all customers data.", summary = "Get all data")
     @APIResponses({
