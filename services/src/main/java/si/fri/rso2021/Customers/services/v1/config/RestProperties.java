@@ -15,6 +15,9 @@ public class RestProperties {
     @ConfigValue(watch = true)
     private Boolean broken;
 
+    @ConfigValue(watch = true)
+    private String topicname;
+
     public Boolean getMaintenanceMode() {
         return this.maintenanceMode;
     }
@@ -30,4 +33,8 @@ public class RestProperties {
     public void setBroken(final Boolean broken) {
         this.broken = broken;
     }
+
+    public String getTopicname() {return topicname;}
+
+    public void setTopicname(String topicname) {this.topicname = topicname;}
 }

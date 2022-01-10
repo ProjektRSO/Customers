@@ -92,6 +92,7 @@ kumuluzee:
 rest-properties:
   maintenance-mode: false
   broken: false
+  topicname: xb9xnuao-customers
 # poimenovanje ter dostop do okoljskih spremenljivk
 
 # kumuluzee.name
