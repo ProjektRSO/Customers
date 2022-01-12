@@ -15,6 +15,10 @@ kumuluzee:
       connection-url: jdbc:postgresql://workersdb.postgres.database.azure.com:5432/postgres
       username: prpo_user@workersdb
       password: mBK7in5SGvGyZIZ_EmCrsY4uLXKTiraP
+  graphql:
+    schema:
+      base-packages:
+        - si.fri.rso2021.Customers.models.v1.objects.Customers
   config:
     start-retry-delay-ms: 500
     max-retry-delay-ms: 900000

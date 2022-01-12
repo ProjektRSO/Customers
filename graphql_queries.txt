@@ -24,10 +24,15 @@ query getCustomers {
 }
 
 mutation addCustomers {
-  addCustomer(imageMetadata: {title: "Šesta slika", description: "Uploaded via GraphQL"}){
+  addCustomers(Customers: {id: 10}){
     id
     firstName
     lastName
+    streetAddress
+    postcode
+    town
+    birthDate
+    IBAN
   }
 }
 

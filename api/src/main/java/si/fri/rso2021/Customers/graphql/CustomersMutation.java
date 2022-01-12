@@ -18,7 +18,7 @@ public class CustomersMutation {
     private CustomersBean customersBean;
 
     @GraphQLMutation
-    public Customers addCustomers(@GraphQLArgument(name = "customers") Customers customer) {
+    public Customers addCustomers(@GraphQLArgument(name = "customer") Customers customer) {
         customersBean.createCustomer(customer);
         return customer;
     }
